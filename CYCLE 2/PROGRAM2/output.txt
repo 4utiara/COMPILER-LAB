@@ -1,6 +1,6 @@
 
 OUTPUT valid variable 
-yacc -d vari.y
+mec@cc-2-4:~/RheaCS7A/cycle 2/pgm2$ yacc -d vari.y
 mec@cc-2-4:~/RheaCS7A/cycle 2/pgm2$ lex var.l
 mec@cc-2-4:~/RheaCS7A/cycle 2/pgm2$ gcc lex.yy.c y.tab.c -o output_pgm
 mec@cc-2-4:~/RheaCS7A/cycle 2/pgm2$ ./output_pgm
