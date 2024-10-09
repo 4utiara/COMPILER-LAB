@@ -17,3 +17,12 @@ for(i=0;i<n;i++)  i=i+1
 ;
 Input accepted
 
+mec@cc-2-4:~/RheaCS7A/cycle 2/PROGRAM5$ ./a.out
+Enter the expression:
+for(i=0;i<n;i++){
+    i=i+1;}
+Input accepted
+mec@cc-2-4:~/RheaCS7A/cycle 2/PROGRAM5$ ./a.out
+Enter the expression:
+for(i=0,i++){
+syntax error
