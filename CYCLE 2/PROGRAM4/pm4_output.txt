@@ -23,7 +23,7 @@ c=a+b;
 }
 }
 
-
+//Coments: Please type CTRL+d after input of the test program
 
 
 
