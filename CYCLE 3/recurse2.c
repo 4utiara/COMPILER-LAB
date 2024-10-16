@@ -63,3 +63,22 @@ void F() {
     error = 1;  // Invalid character
   }
 }
+/*OUTPUT
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ gcc recurse2.c
+recurse2.c: In function ‘main’:
+recurse2.c:18:3: warning: implicit declaration of function ‘gets’ [-Wimplicit-function-declaration]
+   gets(input);
+   ^~~~
+/tmp/cc58Plix.o: In function `main':
+recurse2.c:(.text+0x36): warning: the `gets' function is dangerous and should not be used.
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ ./a.out
+Enter an arithmetic expression: a-b
+
+Accepted..!!!
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ a+(b-c)
+bash: a+(b-c): command not found
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ ./a.out
+Enter an arithmetic expression: a+(b-c)
+
+Accepted..!!!
+*/
