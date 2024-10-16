@@ -1,3 +1,4 @@
+//Second program 
 #include<stdio.h>
 
 #include<math.h>
@@ -74,3 +75,20 @@ void follow(char c) {
     }
   }
 }
+/*OUTPUT
+Enter the no of productions : 
+4
+Enter the productions:
+S=A
+A=aB|Ad
+B=b
+C=g
+Enter a variable whose fisrt & follow is to be found:C
+First(C)={g}
+Follow(C)={}
+Want to continue or not(1/0) ? 1
+Enter a variable whose fisrt & follow is to be found:A
+First(A)={a}
+Follow(A)={$}
+Want to continue or not(1/0) ? 0
+*/
