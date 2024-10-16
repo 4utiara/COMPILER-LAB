@@ -74,3 +74,18 @@ void check()
             i = i - 2;
         }
 }
+/*OUTPUT
+GRAMMAR is E->E+E 
+ E->E*E 
+ E->(E) 
+ E->id
+enter input string 
+i+i*i
+stack 	 input 	 action
+
+$i	 +i*i$	SHIFT->symbols
+$i+	  i*i$	SHIFT->symbols
+$i+i	   *i$	SHIFT->symbols
+$i+i*	    i$	SHIFT->symbols
+$i+i*i	     $	SHIFT->symbolsmec@cc-2-4:~/RheaCS7A/CYCLE 3$ -
+*/
