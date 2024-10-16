@@ -1,3 +1,4 @@
+//PROGRAM 4
 #include <stdio.h>
 #include <string.h>
 int k = 0, z = 0, i = 0, j = 0, c = 0;
