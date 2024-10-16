@@ -1,3 +1,4 @@
+//-/ div don't work
 #include<stdio.h>
 
 #include<string.h>
