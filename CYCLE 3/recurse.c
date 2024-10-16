@@ -55,3 +55,28 @@ void F() {
     else error = 1;
   } else error = 1;
 }
+/*OUTPUT
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ gcc recurse.c
+recurse.c: In function ‘main’:
+recurse.c:18:3: warning: implicit declaration of function ‘gets’ [-Wimplicit-function-declaration]
+   gets(input);
+   ^~~~
+/tmp/cc1GjD5p.o: In function `main':
+recurse.c:(.text+0x36): warning: the `gets' function is dangerous and should not be used.
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ ./a.out
+Enter an arithmetic expression : i+(i*a)
+
+Accepted..!!!
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ ./a.out
+Enter an arithmetic expression : i+*a
+
+Rejected..!!!
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ ./a.out
+Enter an arithmetic expression : i+a
+
+Accepted..!!!
+mec@cc-2-4:~/RheaCS7A/CYCLE 3$ ./a.out
+Enter an arithmetic expression : i-a
+
+Rejected..!!!
+*/
