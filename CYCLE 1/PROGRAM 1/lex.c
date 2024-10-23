@@ -214,3 +214,25 @@ int isOperatorChar(char c) {
     return strchr("+-*/=<>!&|%^", c) != NULL;
 }
 
+/*OUTPUT
+hp@hp-HP-Pavilion-Laptop-14-dv2xxx:~/COMPILER LAB/CYCLE 1/PROGRAM 1$ gcc lex.c
+hp@hp-HP-Pavilion-Laptop-14-dv2xxx:~/COMPILER LAB/CYCLE 1/PROGRAM 1$ ./a.out
+Input:
+int p,q,r;
+p=q+r;
+
+Tokens:
+Token: Keyword         Value: int
+Token: Identifier      Value: p
+Token: Punctuation     Value: ,
+Token: Identifier      Value: q
+Token: Punctuation     Value: ,
+Token: Identifier      Value: r
+Token: Punctuation     Value: ;
+Token: Identifier      Value: p
+Token: Operator        Value: =
+Token: Identifier      Value: q
+Token: Operator        Value: +
+Token: Identifier      Value: r
+Token: Punctuation     Value: ;
+*/
