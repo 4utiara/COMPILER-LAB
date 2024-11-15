@@ -1,0 +1,71 @@
+EXPERIMENT - 4
+DFA MINIMIZATION
+AIM
+To write a C program to minimize the given DFA.
+ALGORITHM
+main()
+1. Call the `load_DFA_table()` function to initialize the DFA transition table `DFAtab[]`, the
+number of DFA states (`N_DFA_states`), and the number of symbols (`N_symbols`).
+2. Call `print_dfa_table(DFAtab, N_DFA_states, N_symbols, DFA_finals)` to print the initial DFA
+transition table.
+3. Call `optimize_DFA(DFAtab, N_DFA_states, N_symbols, DFA_finals, StateName, OptDFA)` to
+perform state minimization of the DFA.
+4. The result is stored in `OptDFA[]`, and the number of optimized DFA states is returned as
+`N_optDFA_states`.
+5. Call `get_NEW_finals(NEW_finals, DFA_finals, StateName, N_optDFA_states)` to get
+the final states of the optimized DFA.
+6. Call `print_dfa_table(OptDFA, N_optDFA_states, N_symbols, NEW_finals)` to print the
+minimized DFA transition table.
+load_DFA_table()
+1. 2. Initialize the DFA transition table `DFAtab[][]` with specific state transitions.
+Set the DFA final states `DFA_finals`.
+3. Set the number of DFA states (`N_DFA_states`) and the number of symbols
+(`N_symbols`).
+optimize_DFA()
+1. Call `init_equiv_class()` to divide DFA states into two equivalence classes: final states
+and non-final states.
+2. Store the equivalence classes in `stnt[][]` and return the number of initial equivalence
+classes `n`.
+3. Repeat until no further splitting of equivalence classes occurs:
+a. Print the current equivalence class candidates using `print_equiv_classes()`.
+b. Call `get_optimized_DFA()` to compute the transitions for the current
+equivalence classes.
+c. Call `set_new_equiv_class()` to split and refine the equivalence classes if
+necessary.
+4. Return the number of minimized DFA states.
+init_equiv_class()
+1. Divide DFA states into two groups:
+a. Group 1: Non-final states.
+b. Group 2: Final states.
+2. 3. Store these groups as equivalence classes in `statename[][]`.
+Return the number of initial equivalence classes.
+get_optimized_DFA()
+1. 2. For each pseudo-DFA state in `stnt[][]`:
+a. b. For each input symbol, compute the next states.
+Call `get_next_state()` to compute the next states for the current state.
+c. Call `state_index()` to check whether the next states belong to a single
+equivalence class or need further splitting.
+d. Update the `newdfa[][]` transition table with the new equivalence class for each
+state.
+Return the new number of equivalence classes after the transition computation.
+set_new_equiv_class()
+1. For each equivalence class in `stnt[][]`:
+a. For each input symbol, check whether the next states belong to a unique
+equivalence class using the `newdfa[][]` transition table.
+b. If a state needs further splitting, call `split_equiv_class()` to divide the
+equivalence class into subclasses.
+2. Return the new number of equivalence classes.
+split_equiv_class()
+1. 2. 3. For the selected equivalence class:
+a. Divide the states in the class into multiple subclasses based on their transitions.
+Update the equivalence class list `stnt[][]` to include the new subclasses.
+Sort the equivalence classes and return the updated number of classes.
+get_NEW_finals()
+1. 2. 3. For each equivalence class in `stnt[][]`, check whether all states in the class are final
+states.
+If the class contains final states, add the new state to `newfinals[]`.
+Return the final states for the minimized DFA.
+print_dfa_table()
+1. Print the header for the DFA transition table (states and input symbols).
+2. For each state in the DFA, print the transitions for all input symbols.
+3. Print the final states of the DFA.

@@ -1,0 +1,26 @@
+EXPERIMENT - 12
+OPERATOR PRECEDENCE PARSER
+AIM
+To develop an operator precedence parser for a given language.
+ALGORITHM:
+1. Initialize arrays stack[20], ip[20], opt[10][10][1], and ter[10]. Set variables i, j, k, n, top =
+0, col, row.
+2. Set all elements of stack and ip to NULL. Set opt[i][j][1] to NULL in a nested loop.
+3. Prompt the user to enter the number of terminals n.
+4. Read the terminal symbols into the ter array.
+5. In a nested loop, input the precedence table values (<, =, >) for each terminal pair.
+6. Store the values in the array opt[i][j].
+7. Print the operator precedence table for all terminal pairs.
+8. Set stack[0] = '$' (bottom of the stack).
+9. Print the initial stack and prompt the user to input the string ip.
+10. Start a loop while i <= strlen(ip).
+11. Find the column col and row row in the precedence table using stack[top] and ip[i].
+12. If stack[top] == '$' and ip[i] == '$', print "String is accepted". Exit the loop.
+13. If opt[col][row][0] == '<' or '=', push opt[col][row][0] and ip[i] onto the stack. Print "Shift
+ip[i]". Increment i.
+14. If opt[col][row][0] == '>', pop symbols from the stack until stack[top] == '<'. Pop one
+more symbol. Print "Reduce".
+15. If no valid precedence entry, print "String is not accepted". Exit the loop.
+16. Print the current stack and remaining input after every shift or reduce.
+17. Repeat steps 10-16 until the input string is either accepted or rejected.
+18. Exit after accepting or rejecting the string.

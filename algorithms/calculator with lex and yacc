@@ -1,0 +1,25 @@
+EXPERIMENT - 9
+CALCULATOR WITH LEX AND YACC
+AIM
+To implement a calculator using lex and yacc.
+ALGORITHM
+1. 2. 3. 4. 5. 6. 7. 8. 9. The program begins in main(), prompting the user to input an arithmetic expression.
+yyparse() is called to start parsing the input.
+The lexical analyzer matches patterns for numbers ([0-9]+) and arithmetic operators (+, -
+,
+*, /) and returns tokens to the parser.
+The parser uses the following CFG:
+ start → expression
+ expression → expression '+' term | expression '-' term | term
+ term → term '*' factor | term '/' factor | factor
+ factor → '(' expression ')' | NUMBER
+The parser processes tokens based on the CFG rules, performing arithmetic operations as
+it matches expressions.
+Intermediate results are calculated and stored using the semantic actions associated with
+each rule.
+If an invalid token or character is encountered, the lexer prints an error message.
+After successfully parsing, the result of the expression is printed.
+If any syntax errors occur, yyerror() is invoked, printing an error message.The program
+terminates after displaying the result or an error message.
+RESULT
+Successfully run the program and obtained desired output.

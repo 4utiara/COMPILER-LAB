@@ -1,0 +1,24 @@
+EXPERIMENT - 8
+YACC PROGRAM TO RECOGNIZE VALID VARIABLES
+AIM
+To write a YACC program to recognize a valid variable which starts with a letter followed by any
+number of letters or digits.
+ALGORITHM
+1. 2. 3. 4. 5. 6. 7. 8. 9. The program begins in main() where the user is prompted to input a string.
+yyparse() is called to start the parsing process.
+The lexical analyzer identifies tokens based on patterns: letter for identifiers and digit for
+numbers.
+The lexer returns letter for [a-zA-Z_][a-zA-Z_0-9]* and digit for [0-9] to the YACC
+parser.
+The parser uses the CFG rules:
+ start → letter s
+ s → letter s | digit s | ε
+The parser checks if the input follows these rules, defining valid identifiers starting with a
+letter.
+If the input matches the CFG, the parsing continues successfully.
+If the input violates the CFG, yyerror() is called, setting valid = 0 and printing an error
+message.
+After parsing, main() checks the valid flag.
+10. If valid, it prints "It is an identifier"; otherwise, it prints an error message.
+RESULT
+Successfully run the program and obtained desired output.
